@@ -11,9 +11,20 @@
     :root, html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      background-color: var(ddd-theme-default-nittanyNavy);
+      color-scheme: light-dark;
+      color: light-dark(var(--ddd-theme-default-white), var(--ddd-theme-default-white));
     }
     #demo {
-      margin: var(--ddd-spacing-2);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     portfolio-very-theme {
       margin: var(--ddd-spacing-2);
@@ -23,16 +34,17 @@
     portfolio-very-theme:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
-    #example {
-      --portfolio-very-theme-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
-    }
+
   </style>
   <title>portfolio-very-theme</title>
 </head>
+<script type="module" src="./portfolio-very-theme.js"></script>
 
 <body>
+  <div id="demo">
+    <portfolio-very-theme title="portfolio">
+      <p>Demonstration for portfolio-very-theme</p>
+  </div>
   
 
   <!-- Take HAX, the Web and you further down the rabbit hole -->
@@ -71,7 +83,7 @@
       color: yellow;
     }
   </style>
-      <scroll-button>Hello</scroll-button>
+      <scroll-button></scroll-button>
     </div>
   </details>
 </body>
