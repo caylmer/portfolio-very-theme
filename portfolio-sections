@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #about { background-color: black; }
+        #work-experience { background-color: blue; }
+        #skills { background-color: black; }
+        #projects { background-color: blue; }
+        #contact { background-color: black; }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: black;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div id="about" class="section">
+        <h1>About Me</h1>
+        <p>Welcome to my portfolio! Here's a little about me...</p>
+    </div>
+
+    <div id="work-experience" class="section">
+        <h1>Work Experience</h1>
+        <p>Here is my professional experience...</p>
+    </div>
+
+    <div id="skills" class="section">
+        <h1>Skills</h1>
+        <p>These are my skills...</p>
+    </div>
+
+    <div id="projects" class="section">
+        <h1>Projects</h1>
+        <p>Check out some of my projects...</p>
+    </div>
+
+    <div id="contact" class="section">
+        <h1>Contact</h1>
+        <p>Feel free to reach out to me...</p>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import '@haxtheweb/scroll-button/scroll-button.js';
+import "./top-bar.js";
 
 /**
  * `portfolio-very-theme`
@@ -21,30 +22,8 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
-    this.t = this.t || {};
-    this.t = {
-      ...this.t,
-      title: "Title",
     };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/portfolio-very-theme.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
-  }
-
-  // Lit reactive properties
-  static get properties() {
-    return {
-      ...super.properties,
-      title: { type: String },
-    };
-  }
-
-  // Lit scoped styles
+    
   static get styles() {
     return [super.styles,
     css`
@@ -71,9 +50,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         bottom: 20px;
         right: 20px;
         z-index: 1000;
-      }
-      h3 span {
-        font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
       }
     `];
   }
